@@ -12,7 +12,7 @@
         android:layout_height="74dp"
         android:background="#717FB3"
         android:backgroundTint="#D3C995"
-        android:text="NMedia!"
+        android:text="@string/nmedia"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#276D8F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,6 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.517"
-        tools:text="Hello World!" />
+        tools:text="NMedia!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
