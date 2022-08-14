@@ -152,37 +152,5 @@
             app:layout_constraintTop_toBottomOf="@+id/postTV" />
 
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="74dp"-->
-<!--                android:background="#717FB3"-->
-<!--                android:backgroundTint="#D3C995"-->
-<!--                android:text="@string/nmedia"-->
-<!--                android:textAppearance="@style/TextAppearance.AppCompat.Display2"-->
-<!--                android:textColor="#276D8F"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.497"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.328"-->
-<!--                tools:text="NMedia!" />-->
-<!--                -->
-<!--            <ImageView-->
-<!--                android:layout_width="97dp"-->
-<!--                android:layout_height="137dp"-->
-<!--                android:background="#717FB3"-->
-<!--                android:backgroundTint="#D3C995"-->
-<!--                android:src="@drawable/ic_baseline_emoji_people_24"-->
-<!--                android:textAppearance="@style/TextAppearance.AppCompat.Display2"-->
-<!--                android:textColor="#276D8F"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.577"-->
-<!--                tools:text="NMedia!" />-->
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

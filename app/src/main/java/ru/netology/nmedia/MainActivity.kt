@@ -3,57 +3,45 @@ package ru.netology.nmedia
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.viewModels
 import ru.netology.nmedia.databinding.ActivityMainBinding
-import java.math.BigDecimal
-import kotlin.math.round
+import ru.netology.nmedia.utils.dto.Post
+import ru.netology.nmedia.utils.viewmodel.PostViewModel
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
-
-//        val binding: ActivityMainBinding =
-//            DataBindingUtil.setContentView(this, R.layout.activity_main)
-
         setContentView(binding.root)
 
-        val post: Post = Post(
-            getString(R.string.authorName),
-            getString(R.string.published),
-            getString(R.string.postTV),
-            liked = false,
-            likes = 999,
-            share = 999
-        )
-
-
+        val viewModel: PostViewModel by viewModels()
 
         with(binding) {
 
-
-
-            authorTV1.text = post.author
-            published.text = post.published
-
-            shareIV.setOnClickListener { shareTV.text = sharing(post) }
-
             likeIV.setOnClickListener {
-                post.liked = !post.liked
-                likeIV.setImageResource(liking(post))
-                likedTV.text = addLike(post)
+                viewModel.liking()
             }
 
+            shareIV.setOnClickListener {
+                viewModel.sharing()
+            }
+
+            viewModel.data.observe(this@MainActivity) { post ->
+
+                authorTV1.text = post.author
+                published.text = post.published
+                postTV.text = post.content
+                likedTV.text = convert(post.likes)
+                likeIV.setImageResource(liking(post))
+                shareTV.text = convert(post.share)
+
+            }
         }
-
-
     }
-
 }
 
 private fun convert(number: Int): String {
-//    return number.toString()
     number.toDouble()
     return when {
         (number < 1000) -> number.toString()
@@ -62,27 +50,11 @@ private fun convert(number: Int): String {
     }
 }
 
-
-
-//private fun sharing(post: Post) = convert(post.share)
-
-private fun sharing(post: Post): String {
-    val x = post.share
-    post.share = x + 100_000
-    return convert(post.share)
-}
-
 private fun liking(post: Post) =
     if (post.liked) R.drawable.ic_red_heart_liked else R.drawable.ic_heart_like
 
-private fun addLike(post: Post) = if (post.liked) convert(post.likes++) else convert(post.likes--)
 
-//    private fun getImageResource(post: Post) =
-//        if (post.liked) {
-//            R.drawable.ic_heart_like
-//
-//        }
-//            else R.drawable.ic_red_heart_liked
+
 
 
 
