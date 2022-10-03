@@ -3,8 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable-navexposed/ic_like24dp.xml" value="0.1" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable-navexposed/ic_like_24dp.xml" value="0.117" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable-navexposed/like_checkbox_tint.xml" value="0.1365" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_art2_background.xml" value="0.3285" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_art_background.xml" value="0.3285" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.117" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_baseline_emoji_people_24.xml" value="0.271" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.271" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_heart_like.xml" value="0.121" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_illustration_background.xml" value="0.3675" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_like24dp.xml" value="0.117" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_like_24dp.xml" value="0.117" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_netology_logo.xml" value="0.1" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_red_heart_liked.xml" value="0.1" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/drawable/ic_save_24.xml" value="0.271" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_intent_handler.xml" value="0.1" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_new_post.xml" value="0.25" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/crud.xml" value="0.1" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/item_post.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/menu/option_post.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/mipmap-anydpi-v26/ic_art.xml" value="0.3285" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/11AndroidStudioSDKFirstApp/app/src/main/res/drawable-v24/avatar2.xml" value="0.3675" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/11AndroidStudioSDKFirstApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.111" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/11AndroidStudioSDKFirstApp/app/src/main/res/drawable/ic_baseline_emoji_people_24.xml" value="0.194" />

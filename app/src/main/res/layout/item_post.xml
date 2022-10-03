@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     tools:context=".activity.MainActivity">
-
 
     <TextView
         android:id="@+id/authorTV1"
@@ -18,11 +16,85 @@
         android:ellipsize="end"
         android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@+id/published"
-        app:layout_constraintEnd_toStartOf="@id/moreIB"
+        app:layout_constraintEnd_toStartOf="@id/moreIV"
         app:layout_constraintStart_toEndOf="@+id/avatarIV"
         app:layout_constraintTop_toTopOf="@+id/avatarIV"
         tools:ignore="MissingConstraints"
         tools:text="@string/authorName" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/likeButton"
+        style="@style/Widget.AppTheme.LikeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checkable="true"
+        android:contentDescription="@string/description_post_like"
+        app:icon="@drawable/ic_like_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/postTV"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoContainer"
+        tools:checked="@sample/posts.json/data/liked"
+        tools:text="@sample/posts.json/data/likes" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editButton"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checkable="true"
+        android:contentDescription="@string/description_views"
+        app:icon="@drawable/ic_edit_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoContainer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewsButton"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checkable="false"
+        android:contentDescription="@string/description_views"
+        app:icon="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoContainer"
+        tools:text="@sample/posts.json/data/share" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/shareButton"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checkable="false"
+        android:contentDescription="@string/description_post_share"
+        app:icon="@drawable/ic_share_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoContainer"
+        tools:text="@sample/posts.json/data/share" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/moreIV"
+        android:layout_width="@dimen/posts_avatar_size"
+        android:layout_height="@dimen/posts_avatar_size"
+        android:checkable="false"
+        android:contentDescription="@string/description_more"
+        app:layout_constraintBottom_toBottomOf="@id/avatarIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/avatarIV"
+        app:icon="@drawable/ic_baseline_more_vert_24"
+        style="@style/Widget.MaterialComponents.Button"/>
 
     <TextView
         android:id="@+id/published"
@@ -43,16 +115,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/moreIB"
-        android:layout_width="@dimen/posts_avatar_size"
-        android:layout_height="@dimen/posts_avatar_size"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@id/avatarIV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/avatarIV"
-        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
-
     <TextView
         android:id="@+id/postTV"
         android:layout_width="wrap_content"
@@ -63,67 +125,6 @@
         android:text="@string/postTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/avatarIV" />
-
-    <ImageView
-        android:id="@+id/shareIV"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        app:layout_constraintStart_toEndOf="@+id/likeIV"
-        app:layout_constraintTop_toBottomOf="@+id/postTV"
-        app:srcCompat="?attr/actionModeShareDrawable" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTV"
-        app:srcCompat="@drawable/ic_baseline_visibility_24" />
-
-    <ImageView
-        android:id="@+id/likeIV"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTV"
-        app:srcCompat="@drawable/ic_heart_like" />
-
-    <TextView
-        android:id="@+id/likedTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:text="10"
-        app:layout_constraintStart_toEndOf="@+id/likeIV"
-        app:layout_constraintTop_toBottomOf="@+id/postTV" />
-
-    <TextView
-        android:id="@+id/shareTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/shareIV"
-        app:layout_constraintTop_toBottomOf="@+id/postTV" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:text="5"
-
-
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/postTV" />
 
     <View
         android:id="@+id/divider"
@@ -140,11 +141,23 @@
         android:id="@+id/divider3"
         android:layout_width="409dp"
         android:layout_height="1dp"
+        android:layout_marginTop="8dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/shareIV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postTV" />
+
+    <ImageView
+        android:id="@+id/videoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_play_circle_48"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

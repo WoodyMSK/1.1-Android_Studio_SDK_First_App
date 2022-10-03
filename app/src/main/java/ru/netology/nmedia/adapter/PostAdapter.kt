@@ -1,66 +1,95 @@
 package ru.netology.nmedia.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.NonDisposableHandle.parent
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.ItemPostBinding
 import ru.netology.nmedia.dto.Post
 import kotlin.math.roundToInt
 
 class PostAdapter(
-    val onPostLiked: (Post) -> Unit,
-    val onShareClicked: (Post) -> Unit
+    private val listener: PostAdapterClickListener
 ) : ListAdapter<Post, PostViewHolder>(PostDiffItemCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+        val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return PostViewHolder(binding, listener)
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder =
-        PostViewHolder(
-            ItemPostBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        ).apply {
-            binding.likeIV.setOnClickListener {
-                onPostLiked(getItem(adapterPosition))
-            }
-            binding.shareIV.setOnClickListener {
-                onShareClicked(getItem(adapterPosition))
-            }
-        }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = getItem(position)
-        with(holder.binding) {
+        holder.bind(post)
+    }
+}
+
+class PostViewHolder(
+    private val binding: ItemPostBinding,
+    private val listener: PostAdapterClickListener
+) : RecyclerView.ViewHolder(binding.root) {
+    fun bind(post: Post) {
+        binding.apply {
             authorTV1.text = post.author
             published.text = post.published
             postTV.text = post.content
-            likedTV.text = convert(post.likes)
-            likeIV.setImageResource(
-                if (post.liked) R.drawable.ic_red_heart_liked else R.drawable.ic_heart_like
-            )
-            shareTV.text = convert(post.share)
+            videoContainer.visibility = if (post.videoLink == "") View.GONE else View.VISIBLE
+            likeButton.text = convert(post.likes)
+            likeButton.isChecked = post.liked
+            shareButton.text = convert(post.share)
+            moreIV.setOnClickListener {
+                PopupMenu(it.context, it).apply {
+                    inflate(R.menu.option_post)
+                    setOnMenuItemClickListener { menuItem ->
+                        when (menuItem.itemId) {
+                            R.id.remove -> {
+                                listener.onRemoveClicked(post)
+                                true
+                            }
+
+                            R.id.edit -> {
+                                listener.onEditClickListener(post)
+                                true
+                            }
+
+                            else -> false
+                        }
+                    }
+                }.show()
+            }
+            editButton.setOnClickListener {
+                listener.onEditPostActivity(post)
+            }
+            likeButton.setOnClickListener {
+                listener.onLikeClicked(post)
+            }
+            shareButton.setOnClickListener {
+                listener.onShareClicked(post)
+            }
+            videoContainer.setOnClickListener {
+                listener.onVideoLink(post)
+            }
         }
     }
+}
 
-    object PostDiffItemCallback : DiffUtil.ItemCallback<Post>() {
-        override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean =
-            oldItem.id == newItem.id
+object PostDiffItemCallback : DiffUtil.ItemCallback<Post>() {
+    override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean =
+        oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean =
-            oldItem == newItem
+    override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean =
+        oldItem == newItem
 
-    }
+}
 
-    private fun convert(number: Int): String {
-        number.toDouble()
-        return when {
-            (number < 1000) -> number.toString()
-            (number < 1_000_000) -> (((((number / 100.0)).roundToInt()).toDouble()) / 10).toString() + "K"
-            else -> (((((number / 100_000.0)).roundToInt()).toDouble()) / 10).toString() + "M"
-        }
+private fun convert(number: Int): String {
+    number.toDouble()
+    return when {
+        (number < 1000) -> number.toString()
+        (number < 1_000_000) -> (((((number / 100.0)).roundToInt()).toDouble()) / 10).toString() + "K"
+        else -> (((((number / 100_000.0)).roundToInt()).toDouble()) / 10).toString() + "M"
     }
 }

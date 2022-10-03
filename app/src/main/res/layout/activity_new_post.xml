@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NewPostActivity">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@android:color/transparent"
+        android:clickable="false"
+        android:gravity="start|top"
+        android:hint="Текст поста"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/videoLink"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:allowUndo="true"
+        android:hint="Сcылка на внешний источник"
+        android:inputType="textMultiLine"
+        android:shadowColor="#9F9F9F"
+        app:layout_anchor="@+id/editText"
+        app:layout_anchorGravity="bottom" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/editText" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/savePost"
+        android:contentDescription="SaveNewPost"
+        app:srcCompat="@drawable/ic_save_24"
+        app:layout_anchor="@id/bottomAppBar" />
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
