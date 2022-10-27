@@ -1,5 +1,6 @@
 package ru.netology.nmedia.repository
 
+import android.provider.Telephony
 import androidx.lifecycle.LiveData
 import ru.netology.nmedia.dto.Post
 
@@ -12,5 +13,7 @@ interface PostRepository {
     fun saveNewEditedPost(post: Post)
     fun cancel(post: Post)
     fun copyPost(post: Post)
+    fun getDraft(): String?
+    fun setDraft(draft: String?)
 
 }

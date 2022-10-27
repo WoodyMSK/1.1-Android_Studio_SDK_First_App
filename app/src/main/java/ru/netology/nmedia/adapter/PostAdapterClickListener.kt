@@ -9,5 +9,6 @@ interface PostAdapterClickListener {
     fun onShareClicked(post: Post)
     fun onEditPostActivity(post: Post)
     fun onVideoLink(post: Post)
+    fun onPostClicked(post: Post)
 
 }

@@ -94,10 +94,7 @@ class PostRepositoryFileImpl(
         }
 
         posts = posts.map {
-            if (it.id != post.id) it else it.copy(
-                content = post.content,
-                videoLink = post.videoLink
-            )
+            if (it.id != post.id) it else it.copy(content = post.content, videoLink = post.videoLink)
         }
         data.value = posts
         sync()
@@ -125,6 +122,14 @@ class PostRepositoryFileImpl(
         data.value = posts
         sync()
         return
+    }
+
+    override fun getDraft(): String? {
+        TODO("Not yet implemented")
+    }
+
+    override fun setDraft(draft: String?) {
+        TODO("Not yet implemented")
     }
 
     override fun cancel(post: Post) {

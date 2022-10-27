@@ -72,6 +72,9 @@ class PostViewHolder(
             videoContainer.setOnClickListener {
                 listener.onVideoLink(post)
             }
+            itemPostCL.setOnClickListener {
+                listener.onPostClicked(post)
+            }
         }
     }
 }

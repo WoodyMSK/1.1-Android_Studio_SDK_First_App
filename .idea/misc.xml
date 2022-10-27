@@ -23,7 +23,11 @@
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/activity_new_post.xml" value="0.25" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/crud.xml" value="0.1" />
-        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/item_post.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/fragment_edit_post.xml" value="0.3383838383838384" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/fragment_feed.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/fragment_new_post.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/fragment_post.xml" value="0.33" />
+        <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/layout/item_post.xml" value="0.5" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/menu/option_post.xml" value="0.33" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/1.1-Android_Studio_SDK_First_App/app/src/main/res/mipmap-anydpi-v26/ic_art.xml" value="0.3285" />
         <entry key="..\:/Users/urazh/AndroidStudioProjects/11AndroidStudioSDKFirstApp/app/src/main/res/drawable-v24/avatar2.xml" value="0.3675" />

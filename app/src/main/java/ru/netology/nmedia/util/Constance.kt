@@ -1,4 +1,4 @@
-package ru.netology.nmedia
+package ru.netology.nmedia.util
 
 object Constance {
     const val ADD_EDIT_STATE = "add_edit_state"

@@ -173,6 +173,14 @@ class PostRepositoryInMemory : PostRepository {
         return
     }
 
+    override fun getDraft(): String? {
+        TODO("Not yet implemented")
+    }
+
+    override fun setDraft(draft: String?) {
+        TODO("Not yet implemented")
+    }
+
     override fun cancel(post: Post) {
         data.value = data.value?.map {
             if (it.id != post.id) it else it.copy(content = it.content)

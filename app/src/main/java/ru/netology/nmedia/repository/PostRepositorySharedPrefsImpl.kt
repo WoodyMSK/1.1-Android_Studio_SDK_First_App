@@ -79,7 +79,6 @@ class PostRepositorySharedPrefsImpl(
         sync()
     }
 
-
     override fun saveNewEditedPost(post: Post) {
         if (post.id == 0L) {
             posts =
@@ -122,6 +121,14 @@ class PostRepositorySharedPrefsImpl(
         data.value = posts
         sync()
         return
+    }
+
+    override fun getDraft(): String? {
+        TODO("Not yet implemented")
+    }
+
+    override fun setDraft(draft: String?) {
+        TODO("Not yet implemented")
     }
 
     override fun cancel(post: Post) {

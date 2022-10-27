@@ -2,10 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemPostCL"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="true"
     android:padding="16dp"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/authorTV1"
@@ -21,6 +24,17 @@
         app:layout_constraintTop_toTopOf="@+id/avatarIV"
         tools:ignore="MissingConstraints"
         tools:text="@string/authorName" />
+
+    <TextView
+        android:id="@+id/postTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/postTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarIV" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/likeButton"
@@ -86,15 +100,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/moreIV"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="@dimen/posts_avatar_size"
         android:layout_height="@dimen/posts_avatar_size"
         android:checkable="false"
         android:contentDescription="@string/description_more"
+        app:icon="@drawable/ic_baseline_more_vert_24"
         app:layout_constraintBottom_toBottomOf="@id/avatarIV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/avatarIV"
-        app:icon="@drawable/ic_baseline_more_vert_24"
-        style="@style/Widget.MaterialComponents.Button"/>
+        app:layout_constraintTop_toTopOf="@id/avatarIV" />
 
     <TextView
         android:id="@+id/published"
@@ -114,17 +128,6 @@
         app:barrierDirection="bottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/postTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:autoLink="web"
-        android:linksClickable="true"
-        android:text="@string/postTV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatarIV" />
 
     <View
         android:id="@+id/divider"
@@ -157,7 +160,21 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        app:layout_constraintTop_toBottomOf="@+id/divider3"/>
+
+    <ScrollView
+        android:id="@+id/postSV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/avatarIV">
+
+
+    </ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
